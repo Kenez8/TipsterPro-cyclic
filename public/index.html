@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipster Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-bold mb-4">Tipster Pro</h1>
+        <form id="predictionForm">
+            <label for="sport" class="block mb-2">Sport:</label>
+            <select id="sport" class="block w-full p-2 mb-4 border">
+                <option value="🎾Tenisz🎾">🎾Tenisz🎾</option>
+                <option value="⚽️Labdarugás⚽️">⚽️Labdarugás⚽️</option>
+                <option value="🏒Jégkorong🏒">🏒Jégkorong🏒</option>
+                <option value="🏈Amerikai Futball🏈">🏈Amerikai Futball🏈</option>
+                <option value="🏀Kosárlabda🏀">🏀Kosárlabda🏀</option>
+                <!-- Add more sports as needed -->
+            </select>
+
+            <label for="team1" class="block mb-2">Első csapat:</label>
+            <input type="text" id="team1" class="block w-full p-2 mb-4 border" placeholder="Add meg az első csapatot">
+
+            <label for="team2" class="block mb-2">Második csapat:</label>
+            <input type="text" id="team2" class="block w-full p-2 mb-4 border" placeholder="Add meg az második csapatot">
+
+            <label for="tip" class="block mb-2">Tip:</label>
+            <select id="tip" class="block w-full p-2 mb-4 border">
+                <option value="Az első csapat nyer">Az első csapat nyer</option>
+                <option value="A második csapat nyer">A második csapat nyer</option>
+                <option value="Döntetlen">Döntetlen</option>
+                <option value="Az első csapat nyer vagy döntetlen">Az első csapat nyer vagy döntetlen</option>
+                <option value="Az második csapat nyer vagy döntetlen">Az második csapat nyer vagy döntetlen</option>
+                <option value="X1">X1</option>
+                <!-- Add more tips as needed -->
+            </select>
+
+            <label for="A tét mértéke:" class="block mb-2">A tét mértéke: (%):</label>
+            <input type="number" id="bet" class="block w-full p-2 mb-4 border" placeholder="Add meg a tét mértékét">
+
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Küldés</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
