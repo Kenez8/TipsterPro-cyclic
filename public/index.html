@@ -1,3 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipster Pro</title>
+    <link rel="icon" type="image/png" href="image.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-bold mb-4">Tipster Pro</h1>
+        <form id="predictionForm">
+            <label for="sport" class="block mb-2">Sport:</label>
+            <select id="sport" class="block w-full p-2 mb-4 border">
+                <option value="🎾Tenisz🎾">🎾Tenisz🎾</option>
+                <option value="⚽️Labdarugás⚽️">⚽️Labdarugás⚽️</option>
+                <option value="🏒Jégkorong🏒">🏒Jégkorong🏒</option>
+                <option value="🏈Amerikai Futball🏈">🏈Amerikai Futball🏈</option>
+                <option value="🏀Kosárlabda🏀">🏀Kosárlabda🏀</option>
+                <!-- Add more sports as needed -->
+            </select>
+
+            <label for="team1" class="block mb-2">Első csapat:</label>
+            <input type="text" id="team1" class="block w-full p-2 mb-4 border" placeholder="Add meg az első csapatot">
+
+            <label for="team2" class="block mb-2">Második csapat:</label>
+            <input type="text" id="team2" class="block w-full p-2 mb-4 border" placeholder="Add meg az második csapatot">
+
+            <label for="tip" class="block mb-2">Tip:</label>
+            <select id="tip" class="block w-full p-2 mb-4 border" onchange="toggleInputFields()">
+                <option value="Az első csapat nyer">Az első csapat nyer</option>
+                <option value="A második csapat nyer">A második csapat nyer</option>
+                <option value="Döntetlen">Döntetlen</option>
+                <option value="Az első csapat nyer vagy döntetlen">Az első csapat nyer vagy döntetlen</option>
+                <option value="Az második csapat nyer vagy döntetlen">Az második csapat nyer vagy döntetlen</option>
+
+
+                <option value="more_than_goals">Több, mint gól</option>
+                <option value="less_than_goals">Kevesebb, mint gól</option>
+
+                <option value="team1_more_than">Első csapat több gólt rúg, mint</option>
+                <option value="team1_less_than">Első csapat kevesebb gólt rúg, mint</option>
+               
+                <option value="team2_more_than">Második csapat több gólt rúg, mint</option>
+                <option value="team2_less_than">Második csapat kevesebb gólt rúg, mint</option>
+                
+                <option value="asian_handicap_team1">Azsiai Handicap első csapat</option>
+                <option value="asian_handicap_team2">Azsiai Handicap második csapat</option>
+                <!-- Add more tips as needed -->
+            </select>
+
+            <!-- Conditional Number of Goals1 Input -->
+            <div id="goalsInput1" style="display: none;">
+                <label for="numberOfGoals1" class="block mb-2">Gólok száma:</label>
+                <input type="number" id="numberOfGoals1" class="block w-full p-2 mb-4 border" placeholder="Add meg a gólok számát" step="0.1">
+            </div>
+            <!-- Conditional Number of Goals2 Input -->
+            <div id="goalsInput2" style="display: none;">
+                <label for="numberOfGoals2" class="block mb-2">Gólok száma:</label>
+                <input type="number" id="numberOfGoals2" class="block w-full p-2 mb-4 border" placeholder="Add meg a gólok számát" step="0.1">
+            </div>
+            <!-- Conditional Number of Goals3 Input -->
+            <div id="goalsInput3" style="display: none;">
+                <label for="numberOfGoals3" class="block mb-2">Gólok száma:</label>
+                <input type="number" id="numberOfGoals3" class="block w-full p-2 mb-4 border" placeholder="Add meg a gólok számát" step="0.1">
+            </div>
+            <!-- Conditional Number of Goals4 Input -->
+            <div id="goalsInput4" style="display: none;">
+                <label for="numberOfGoals4" class="block mb-2">Gólok száma:</label>
+                <input type="number" id="numberOfGoals4" class="block w-full p-2 mb-4 border" placeholder="Add meg a gólok számát" step="0.1">
+            </div>
+            <!-- Conditional Number of Goals5 Input -->
+            <div id="goalsInput5" style="display: none;">
+                <label for="numberOfGoals5" class="block mb-2">Gólok száma:</label>
+                <input type="number" id="numberOfGoals5" class="block w-full p-2 mb-4 border" placeholder="Add meg a gólok számát" step="0.1">
+            </div>
+            <!-- Conditional Number of Goals6 Input -->
+            <div id="goalsInput6" style="display: none;">
+                <label for="numberOfGoals6" class="block mb-2">Gólok száma:</label>
+                <input type="number" id="numberOfGoals6" class="block w-full p-2 mb-4 border" placeholder="Add meg a gólok számát" step="0.1">
+            </div>
+
+            <!-- Conditional Asian Handicap Input1 -->
+            <div id="handicapInput1" style="display: none;">
+                 <label for="handicapNumber1" class="block mb-2">Ázsiai Handicap Értéke:</label>
+                 <input type="text" id="handicapNumber1" class="block w-full p-2 mb-4 border" placeholder="Add meg a Handicap értékét" step="0.01">
+            </div>
+            <!-- Conditional Asian Handicap Input1 -->
+            <div id="handicapInput2" style="display: none;">
+                 <label for="handicapNumber2" class="block mb-2">Ázsiai Handicap Értéke:</label>
+                 <input type="text" id="handicapNumber2" class="block w-full p-2 mb-4 border" placeholder="Add meg a Handicap értékét" step="0.01">
+            </div>
+
+            <label for="A tét mértéke:" class="block mb-2">A tét mértéke: (%):</label>
+            <input type="number" id="bet" class="block w-full p-2 mb-4 border" placeholder="Add meg a tét mértékét">
+
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Küldés</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
 
 <!DOCTYPE html>
 <html lang="en">
