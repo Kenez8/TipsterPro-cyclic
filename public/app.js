@@ -12,6 +12,14 @@ function toggleInputFields() {
     //handicap
     const handicapInput1 = document.getElementById('handicapInput1');
     const handicapInput2 = document.getElementById('handicapInput2');
+    //szögletek
+    const cornersInputMore = document.getElementById('cornersInputMore');
+    const cornersInputLess = document.getElementById('cornersInputLess');
+    //szögletek, első félidő
+    const firstHalfCornersInputMore = document.getElementById('firstHalfCornersInputMore');
+    //büntetőlapok
+    const cardsInputMore = document.getElementById('cardsInputMore');
+    const cardsInputLess = document.getElementById('cardsInputLess');
 
     //összes gól/több-kevessebb, mint
     goalsInput1.style.display = tipSelect.value === 'more_than_goals' ? 'block' : 'none';
@@ -25,6 +33,14 @@ function toggleInputFields() {
     //handicap
     handicapInput1.style.display = tipSelect.value === 'asian_handicap_team1' ? 'block' : 'none';
     handicapInput2.style.display = tipSelect.value === 'asian_handicap_team2' ? 'block' : 'none';
+    //szögletek
+    cornersInputMore.style.display = tipSelect.value === 'corners_more_than' ? 'block' : 'none';
+    cornersInputLess.style.display = tipSelect.value === 'corners_less_than' ? 'block' : 'none';
+    //szögletek, első félidő
+    firstHalfCornersInputMore.style.display = tipSelect.value === 'first_half_corners_more_than' ? 'block' : 'none';
+     //büntetőlapok
+    cardsInputMore.style.display = tipSelect.value === 'cards_more_than' ? 'block' : 'none';
+    cardsInputLess.style.display = tipSelect.value === 'cards_less_than' ? 'block' : 'none';
 } 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -113,7 +129,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 tip = `Ázsiai Handicap:\n${team2} ${handicapNumber2}`;
             }
-    
+            // Handling "Szögletek több, mint" option
+            else if (tip === 'corners_more_than') {
+                const cornersMoreThan = document.getElementById('numberOfCornersMore').value;
+                if (!cornersMoreThan.trim()) {
+                    alert('Add meg a szögletek számát');
+                    return;
+                }
+                tip = `Szögletek több, mint ${cornersMoreThan}`;
+            }
+            // Handling "Szögletek kevesebb, mint" option
+            else if (tip === 'corners_less_than') {
+                const cornersLessThan = document.getElementById('numberOfCornersLess').value;
+                if (!cornersLessThan.trim()) {
+                    alert('Add meg a szögletek számát');
+                    return;
+                }
+                tip = `Szögletek kevesebb, mint ${cornersLessThan}`;
+            }
+            // Handling "Szögletek több, mint első félidő" option
+            else if (tip === 'first_half_corners_more_than') {
+                const firstHalfCornersMore = document.getElementById('numberOfFirstHalfCornersMore').value;
+                if (!firstHalfCornersMore.trim()) {
+                    alert('Add meg az első félidő szögleteinek számát');
+                    return;
+                }
+                tip = `Első félidő szögletek több, mint ${firstHalfCornersMore}`;
+            }
+            // Handling "Lapok több, mint" option
+            else if (tip === 'cards_more_than') {
+                const cardsMoreThan = document.getElementById('numberOfCardsMore').value;
+                if (!cardsMoreThan.trim()) {
+                    alert('Add meg a lapok számát');
+                    return;
+                }
+                tip = `Lapok több, mint ${cardsMoreThan}`;
+            }
+            // Handling "Lapok kevesebb, mint" option
+            else if (tip === 'cards_less_than') {
+                const cardsLessThan = document.getElementById('numberOfCardsLess').value;
+                if (!cardsLessThan.trim()) {
+                    alert('Add meg a lapok számát');
+                    return;
+                }
+                tip = `Lapok kevesebb, mint ${cardsLessThan}`;
+            }
 
         // Validate input
         if (!team1 || !team2 || !bet) {
