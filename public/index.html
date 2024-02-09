@@ -47,6 +47,14 @@
                 
                 <option value="asian_handicap_team1">Azsiai Handicap első csapat</option>
                 <option value="asian_handicap_team2">Azsiai Handicap második csapat</option>
+                
+                <option value="corners_more_than">Szögletek több, mint</option>
+                <option value="corners_less_than">Szögletek kevesebb, mint</option>
+                
+                <option value="first_half_corners_more_than">Szögletek több, mint első félidő</option>
+                
+                <option value="cards_more_than">Lapok több, mint</option>
+                <option value="cards_less_than">Lapok kevesebb, mint</option>
                 <!-- Add more tips as needed -->
             </select>
 
@@ -91,7 +99,35 @@
                  <label for="handicapNumber2" class="block mb-2">Ázsiai Handicap Értéke:</label>
                  <input type="text" id="handicapNumber2" class="block w-full p-2 mb-4 border" placeholder="Add meg a Handicap értékét" step="0.01">
             </div>
+            <!-- Conditional Input for 'Szögletek több, mint' -->
+            <div id="cornersInputMore" style="display: none;">
+                <label for="numberOfCornersMore" class="block mb-2">Szögletek száma:</label>
+                <input type="number" id="numberOfCornersMore" class="block w-full p-2 mb-4 border" placeholder="Add meg a szögletek számát" step="1">
+            </div>
 
+            <!-- Conditional Input for 'Szögletek kevesebb, mint' -->
+            <div id="cornersInputLess" style="display: none;">
+                <label for="numberOfCornersLess" class="block mb-2">Szögletek száma:</label>
+                <input type="number" id="numberOfCornersLess" class="block w-full p-2 mb-4 border" placeholder="Add meg a szögletek számát" step="1">
+            </div>
+
+            <!-- Conditional Input for 'Szögletek több, mint első félidő' -->
+            <div id="firstHalfCornersInputMore" style="display: none;">
+                <label for="numberOfFirstHalfCornersMore" class="block mb-2">Első félidő szögletek száma:</label>
+                <input type="number" id="numberOfFirstHalfCornersMore" class="block w-full p-2 mb-4 border" placeholder="Add meg az első félidő szögletek számát" step="1">
+            </div>
+
+            <!-- Conditional Input for 'Lapok több, mint' -->
+            <div id="cardsInputMore" style="display: none;">
+                <label for="numberOfCardsMore" class="block mb-2">Lapok száma:</label>
+                <input type="number" id="numberOfCardsMore" class="block w-full p-2 mb-4 border" placeholder="Add meg a lapok számát" step="1">
+            </div>
+
+            <!-- Conditional Input for 'Lapok kevesebb, mint' -->
+            <div id="cardsInputLess" style="display: none;">
+                <label for="numberOfCardsLess" class="block mb-2">Lapok száma:</label>
+                <input type="number" id="numberOfCardsLess" class="block w-full p-2 mb-4 border" placeholder="Add meg a lapok számát" step="1">
+            </div>
             <label for="A tét mértéke:" class="block mb-2">A tét mértéke: (%):</label>
             <input type="number" id="bet" class="block w-full p-2 mb-4 border" placeholder="Add meg a tét mértékét">
 
