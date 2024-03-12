@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const team2 = document.getElementById('team2').value;
         let tip = document.getElementById('tip').value;
         const bet = document.getElementById('bet').value;
+        const odds = document.getElementById('odds').value;
 
        // Check for the "Több, mint gól" option and adjust tip accordingly
        if (tip === 'more_than_goals') {
