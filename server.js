@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // POST endpoint to receive data from the frontend
 app.post('/sendToTelegram', (req, res) => {
-    const { sport, team1, team2, tip, bet } = req.body;
+    const { sport, team1, team2, tip, bet, odds } = req.body;
 
     // HTML-formatted message
     const message =  `<b>${sport}</b>\n` +
@@ -29,6 +29,8 @@ app.post('/sendToTelegram', (req, res) => {
     `<b>${team1} vs ${team2}</b>\n` +
     `~~~~~~~~~~~~~~~~~~~~\n` +
     `<b>Tip:</b>\t ${tip}\n` +
+    `~~~~~~~~~~~~~~~~~~~~\n` +
+    `<b>Odds:</b>\t ${odds}\n` +
     `~~~~~~~~~~~~~~~~~~~~\n` +
     `<b>Tét:</b>\t${bet}%`;
 
