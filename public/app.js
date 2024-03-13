@@ -63,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
              tip = `${team1} nyer`;
             }else if (tip === 'A második csapat nyer') {
             tip = `${team2} nyer`;
-            } else {
-                // További tippek feldolgozása
             }
        
             // Check for the "Több, mint gól" option and adjust tip accordingly

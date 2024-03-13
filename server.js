@@ -28,9 +28,9 @@ app.post('/sendToTelegram', (req, res) => {
     `~~~~~~~~~~~~~~~~~~~~\n` +
     `<b>${team1} vs ${team2}</b>\n` +
     `~~~~~~~~~~~~~~~~~~~~\n` +
-    `<b>Tip:</b>\t ${tip}\n` +
+    `<b>Tip:</b>\t${tip}\n` +
     `~~~~~~~~~~~~~~~~~~~~\n` +
-    `<b>Odds:</b>\t ${odds}\n` +
+    `<b>Odds:</b>\t${odds}\n` +
     `~~~~~~~~~~~~~~~~~~~~\n` +
     `<b>Tét:</b>\t${bet}%`;
 
