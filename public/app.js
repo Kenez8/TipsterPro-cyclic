@@ -57,7 +57,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const bet = document.getElementById('bet').value;
         const odds = document.getElementById('odds').value;
 
-       // Check for the "Több, mint gól" option and adjust tip accordingly
+        const tip = document.getElementById('tip').value;
+
+        if (tip === 'Az első csapat nyer') {
+             tip = `${team1} nyer`;
+            }else if (tip === 'A második csapat nyer') {
+            tip = `${team2} nyer`;
+            } else {
+                // További tippek feldolgozása
+            }
+       
+            // Check for the "Több, mint gól" option and adjust tip accordingly
        if (tip === 'more_than_goals') {
         const numberOfGoals1 = document.getElementById('numberOfGoals1').value;
         if (!numberOfGoals1.trim()) {
