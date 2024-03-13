@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             // Handling "Az első csapat nyer" option
             else if (tip === 'Az első csapat nyer') {
-                tip = `${team2} nyer`;
+                tip = `${team1} nyer`;
             }
             // Handling "A második csapat nyer" option
             else if (tip === 'A második csapat nyer') {
