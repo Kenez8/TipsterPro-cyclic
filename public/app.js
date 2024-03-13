@@ -175,11 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 tip = `Lapok kevesebb, mint ${cardsLessThan}`;
             }
-            // Handling "Az elsp csapat nyer" option
-            else if (tip === 'A második csapat nyer') {
-            tip = `${team2} nyer`;
+            // Handling "Az első csapat nyer" option
+            else if (tip === 'Az első csapat nyer') {
+                tip = `${team2} nyer`;
             }
-        
+            // Handling "A második csapat nyer" option
+            else if (tip === 'A második csapat nyer') {
+                tip = `${team2} nyer`;
+            }
             // Validate input
         if (!team1 || !team2 || !bet) {
             alert('Please fill in all fields');
