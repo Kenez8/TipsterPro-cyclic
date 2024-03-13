@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Prepare the message
-        const message = `${sport}\n${team1} vs ${team2}\nTipp: ${tip}\nTét: ${bet}%`;
+        const message = `${sport}\n${team1} vs ${team2}\nTipp: ${tip}\nOdds: ${odds}\nTét: ${bet}%`;
 
         // Send the data to the server
         fetch('/sendToTelegram', {
